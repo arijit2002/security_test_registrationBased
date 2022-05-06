@@ -19,7 +19,7 @@ import javax.persistence.UniqueConstraint;
 
 @Entity
 @Table(name = "user", uniqueConstraints=@UniqueConstraint(columnNames="email"))
-class User {
+public class User {
 	
 	@Id
 	@GeneratedValue(strategy =GenerationType.IDENTITY)
