@@ -4,11 +4,15 @@ import java.util.Collection;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
+
+
 
 @Entity
 @Table(name = "user", uniqueConstraints=@UniqueConstraint(columnNames="email"))
@@ -28,6 +32,7 @@ class User {
 	
 	private String password;
 	
+	@ManyToMany(fetch = FetchType.EAGER)
 	private Collection<Role> roles;
 	
 	public User(long id, String firstName, String lastName, String email, String password, Collection<Role> roles) {
