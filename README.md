@@ -1,1 +1,2 @@
-# security_test_registrationBased
+# Spring Security Testing
+*Registration based*
