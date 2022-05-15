@@ -14,7 +14,6 @@ public class UserServiceImpl implements UserService{
 	
 	private UserRepository userRepository;
 	
-	
 	public UserServiceImpl(UserRepository userRepository) {
 		super();
 		this.userRepository = userRepository;
@@ -22,7 +21,10 @@ public class UserServiceImpl implements UserService{
 	
 	@Override
 	public User save(UserRegistrationDto registrationDto) {
-		User user =new User(registrationDto.getFirstName(),registrationDto.getLastName(),
+		User user =new User(registrationDto.getFirstName(),
+				registrationDto.getLastName(),registrationDto.getEmail(),
 				registrationDto.getPassword(),Arrays.asList(new Role("ROLE_USER")));
+		
+		return userRepository.save(user);
 	}
 }

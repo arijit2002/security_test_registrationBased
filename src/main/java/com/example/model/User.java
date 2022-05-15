@@ -1,6 +1,7 @@
 package com.example.model;
 
 import java.util.Collection;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -45,16 +46,20 @@ public class User {
 			)
 	private Collection<Role> roles;
 	
-	public User(long id, String firstName, String lastName, String email, String password, Collection<Role> roles) {
+	public User(String firstName, String lastName, String email, String password, Collection<Role> roles) {
 		super();
-		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
 		this.password = password;
 		this.roles = roles;
 	}
-	
+
+	public User(String firstName2, String lastName2, String email2, String password2, List<Role> asList) {
+		// TODO Auto-generated constructor stub
+	}
+
+
 	public long getId() {
 		return id;
 	}
